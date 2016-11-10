@@ -3,17 +3,109 @@
 </div>
 -----------------
 
-
 # Roadmap to Deep Autonomous Driving
 
 > This is a curated list of Deep Learning for Autonomous Driving
 
 > It serves as: 
 
-> 1. *reading roadmap* from outline to detail and focuses on state-of-the-art
+> 1. *reading roadmap* from outline to detail and focuses on state-of-the-art research with applications in the wild
 > 2. *toolkit collection* and provides links to important datasets, software and researchers in this field
 
 ---------------------------------------
+
+## Why **Deep** Autonomous Driving?
+
+Several reasons for:
+
+- Robustness: Classical AD techniques require intensive hand engineering, road modeling and special case handeling.
+- Deep Learning, on the other side, is data centric and require minimal hand-engineering. 
+- Salient sensory features determined for specific driving conditions
+- It is easy to fuse different sensory inputs as it is learned
+- End-to-end removes the need for hand-crafted heuristics and ill-posed problems (i.e like computing depth from stereo images) 
+- Might learn new and more useful features
+
+A future system should include map building, visual odometry, spatial reasoning, path finding and other strategies for the identification of traversable area 
+
+## Major challenges in Deep AD
+
+> Collection of large diverse datasets with consistent behaviour
+
+
+## 1. Planning for Deep Autonomous Driving
+
+> There are three paradigms for vision-based autonomous driving systems: 
+
+> 1. *Mediated Perception* parses every scene into structured data and derives decision from that
+> 2. *Behaviour Reflex* maps directly from input image to driving control using deep learning 
+> 3. *Direct Perception* maps input to a small number of perception indicators and make a driving decision
+
+### 1.1 Mediated Perception 
+
+- An Empirical Evaluation of Deep Learning on Highway Driving (Huval et al 2015), paper from Andrew Ng, uses Overfeat for real-time vehicle detection.
+
+### 1.2 Behaviour Reflex (End-to-End Learning)
+
+> General Design: Input -> NN -> Control
+
+#### ALVINN, An Autonomous Land Vehicle in a Neural Network (DA Pomerleau 1988) :star:
+
+> First seminal work of a neural network for autonomous driving, trained on simulated data and achieving 90% direction prediction accuracy on road following.
+
+> Architecture: 2-layer FCN 
+> Input: 30x32 image, 8x32 laser range (Simulated)
+> Output: Direction 
+
+> During testing, intensity output is recirculated to the input unit, which improves accuracy
+
+#### Off-Road Obstacle Avoidance through End-to-End Learning (Y LeCun, U Mueller, J Ben, E, Cosatto, B Flepp 2005) :star:
+
+> First use of a CNN for autonomous driving, introduces DAVE an off-road autonomous vehicle trained end-to-end to avoid obstacles 
+
+> Architecture: 6-layer CNN 
+> Input: left/right pair of 149x58 image 
+> Output: Steering Angle 
+
+#### Learning Long-Range Vision for Autonomous Off-Road Driving (R Hadsell, P Sermanet, J Ben, A Erkan, M Scoffier, K Kavukcuoglu, U Mueller, Y LeCun 2009)
+
+> Building upon DAVE, it describes DARPA's LAGR.
+
+
+#### Evolving large-scale neural networks for vision-based torcs (J Koutnik, G Cuccu, J Schmidhuber, FJ Gomez 2013)
+
+ 
+#### End to End Learning for Self-Driving Cars (Bojarski et al. 2016) :star:
+
+> DAVE-2 trains a CNN end-to-end and has a 98% autonomy rate. The authors show that just by using steering as sparse signal and 100h driving, the CNN is able to learn useful features (ie outline of the road).
+> The authors evaluated driving on highway and roads under different weather circumstances, without lane switches and road changes.
+
+> Architecture: 9-layer CNN (chosen empirically)
+> Input: 200x66 images sampled from Video (10FPS)
+> Output: Inverse turning radius
+
+> Represents steering command as *1/r*, where *r* is the turning radius in meters. 
+> Train the car with negative examples using shifted cameras.
+> Ranking after autonomous score: Each intervention is a penalty of 6 seconds
+
+#### Fast Incremental Learning for Off-Road Robot Navigation (A Provodin, L Torabi, B Flepp, Y LeCun, M Sergio, LD Jackel, U Muller, J Zbontar, 2016)
+
+### 1.3 Direct Perception
+
+> General Design: Input -> NN -> Indicators -> Controller -> Control
+
+#### DeepDriving: Learning Affordance for Direct Perception in Autonomous Driving (C Chen, A Seff, A Kornhauser, J Xiao in ICCV2015) :star:
+
+> Describes well pro and cons of mediated and end-to-end learning and introduces another approach: direct perception. Uses a CNN to learn affordance values for a controller. Focuses on Highway Driving with multiple lanes.
+
+> Architecture: AlexNet  
+> Input: 280x210 image (Simulated)
+> Output: 13 affordance indicators 
+
+
+---------------------------------------
+
+## 2 Theory
+
 
 
 ### Traditional Trajectory Planning
@@ -21,30 +113,35 @@
 - Trajectory Planning for Bertha - A Local, Continous Method (Ziegler et al. 2014)
 - Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame (Werling et al. 2010)
 
-### Deep Learning 
-
-- ALVINN, an autonomous land vehicle in a neural network (Pomerleau 1988)
 
 
 
-- Off-Road Obstacle Avoidance through End-to-End Learning (LeCun et al. 2005)
+## Appendix A: Deep Learning Architectures
 
 
-- DeepDriving: Learning Affordance for Direct Perception in Autonomous Driving (Chen et al. ICCV2015)
+CNN (Convolutional Neural Network)
+AlexNet
+VGG
+ResNet
+
+## Object Detection 
+
+- OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks (Sermanet et al. 2014)
+- Faster R-CNN 
 
 
-- End to End Learning for Self-Driving Cars (Bojarski et al. 2016)
-
-
-### Deep Reinforcement Learning
 
 
 
-### Important Researchers
+
+
+
+### 3 Important Researchers
 
 - Sergey Levine
 - Peter Abeel
 - Raquel Urtasun 
+- Yann LeCun
 
 
 ### Stereo Matching
@@ -66,7 +163,7 @@
 - Using Deep Learning combined with shared experiences to create AD 'kindergarten schools'
 
 
-### Autonomous Driving Datasets
+## 4 Autonomous Driving Datasets
 
 - comma.ai Dataset (7:15h of highway driving) [[Link](https://github.com/commaai/research)]
 
@@ -91,10 +188,10 @@ Roag segmentation: 289 training, 290 testing
 - Playing for Data: Ground Truth from Computer Games (24966 densely labeled frames) [[Link](http://download.visinf.tu-darmstadt.de/data/from_games/index.html)]
 
 
-### Simulation Environment
+## 5 Simulation Environment
 
 - GTA V 
-- Torcs
+- TORCS
 
 
 ### Websites
@@ -102,6 +199,7 @@ Roag segmentation: 289 training, 290 testing
 - deepdrive.io
 - dvbuntu.github.io/wisdom
 
+## 6 Projects
 
 ### Deep RL projects
 
@@ -109,6 +207,7 @@ Roag segmentation: 289 training, 290 testing
 - keras-rl: Deep RL library in Keras [[Code](https://github.com/matthiasplappert/keras-rl)]
 - implementation of RL algorithms for Richard Sutton's book [[Code](https://github.com/dennybritz/reinforcement-learning)]
 
+### AD projects
 
 ### More Links
 
