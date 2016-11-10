@@ -52,9 +52,9 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > First seminal work of a neural network for autonomous driving, trained on simulated data and achieving 90% direction prediction accuracy on road following.
 
-> Architecture: 2-layer FCN 
-> Input: 30x32 image, 8x32 laser range (Simulated)
-> Output: Direction 
+> - Architecture: 2-layer FCN 
+> - Input: 30x32 image, 8x32 laser range (Simulated)
+> - Output: Direction 
 
 > During testing, intensity output is recirculated to the input unit, which improves accuracy
 
@@ -62,9 +62,9 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > First use of a CNN for autonomous driving, introduces DAVE an off-road autonomous vehicle trained end-to-end to avoid obstacles 
 
-> Architecture: 6-layer CNN 
-> Input: left/right pair of 149x58 image 
-> Output: Steering Angle 
+> - Architecture: 6-layer CNN 
+> - Input: left/right pair of 149x58 image 
+> - Output: Steering Angle 
 
 #### Learning Long-Range Vision for Autonomous Off-Road Driving (R Hadsell, P Sermanet, J Ben, A Erkan, M Scoffier, K Kavukcuoglu, U Mueller, Y LeCun 2009)
 
@@ -79,9 +79,9 @@ A future system should include map building, visual odometry, spatial reasoning,
 > DAVE-2 trains a CNN end-to-end and has a 98% autonomy rate. The authors show that just by using steering as sparse signal and 100h driving, the CNN is able to learn useful features (ie outline of the road).
 > The authors evaluated driving on highway and roads under different weather circumstances, without lane switches and road changes.
 
-> Architecture: 9-layer CNN (chosen empirically)
-> Input: 200x66 images sampled from Video (10FPS)
-> Output: Inverse turning radius
+> - Architecture: 9-layer CNN (chosen empirically)
+> - Input: 200x66 images sampled from Video (10FPS)
+> - Output: Inverse turning radius
 
 > Represents steering command as *1/r*, where *r* is the turning radius in meters. 
 > Train the car with negative examples using shifted cameras.
@@ -97,9 +97,9 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > Describes well pro and cons of mediated and end-to-end learning and introduces another approach: direct perception. Uses a CNN to learn affordance values for a controller. Focuses on Highway Driving with multiple lanes.
 
-> Architecture: AlexNet  
-> Input: 280x210 image (Simulated)
-> Output: 13 affordance indicators 
+> - Architecture: AlexNet  
+> - Input: 280x210 image (Simulated)
+> - Output: 13 affordance indicators 
 
 
 ---------------------------------------
