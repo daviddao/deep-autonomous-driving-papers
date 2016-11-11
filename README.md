@@ -25,12 +25,12 @@ Several reasons for:
 - End-to-end removes the need for hand-crafted heuristics and ill-posed problems (i.e like computing depth from stereo images) 
 - Might learn new and more useful features
 
-A future system should include map building, visual odometry, spatial reasoning, path finding and other strategies for the identification of traversable area 
+A future system should include map building, visual odometry, spatial reasoning, path finding and other strategies for the identification of traversable area. 
 
 ## Major challenges in Deep AD
 
-> Collection of large diverse datasets with consistent behaviour
-
+> Unavailabiliy of large diverse datasets with consistent driver behaviour
+> How to measure performance robustness?
 
 ## 1. Planning for Deep Autonomous Driving
 
@@ -42,9 +42,35 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 ### 1.1 Mediated Perception 
 
-- An Empirical Evaluation of Deep Learning on Highway Driving (Huval et al 2015), paper from Andrew Ng, uses Overfeat for real-time vehicle detection.
+#### An Empirical Evaluation of Deep Learning on Highway Driving (B Huval, T Wang, S Tandon, J Kiske, W Song, J Pazhayampallil, M Andriluka, P Rajpurkar, T Migimatsu, R Cheng-Yue, F Mujica, A Coates, AY Ng 2015)
 
-### 1.2 Behaviour Reflex (End-to-End Learning)
+> Uses Overfeat for real-time vehicle and lane detection. Due to ambiguity, the authors modified overfeat to first predict a object mask and then used a bounding box regression for the final object detection.
+
+> - Architecture: Overfeat
+> - Input: 640x480 input 
+> - Output: Object mask
+
+#### Fast Incremental Learning for Off-Road Robot Navigation (A Provodin, L Torabi, B Flepp, Y LeCun, M Sergio, LD Jackel, U Muller, J Zbontar, 2016)
+
+> Uses transfer learning to cope with the problem of missing data in AD. Shows that a pretrained CNN on ImageNet can extract good features for AD.
+
+> - Architecture: 3-layer CNN
+> - Input: 59x59 image patches around pixels
+> - Output: Each pixel as "drivable" or "obstacle" 
+
+#### Instance-Level Segmentation for Autonomous Driving with Deep Densely Connected MRFs (Z Zhang, S Fidler, R Urtasun, 2016)
+
+
+
+#### Deep Tracking on the Move: Learning to Track the World from a Moving Vehicle using Recurrent Neural Networks (J Dequaire, D Rao, P Ondruska, DZ Wang, I Posner, 2016) :star:
+
+> End-to-end approach for tracking objects in occupancy maps using the DeepTracking framework. It can track occluded objects using an RNN and account for the movement of the vehicle by adding spatial invariance.
+
+> - Architecture: 3-layer GRU RNN with STN 
+> - Input: raw occupancy map
+> - Output: Object map 
+
+### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
 
 > General Design: Input -> NN -> Control
 
@@ -56,15 +82,15 @@ A future system should include map building, visual odometry, spatial reasoning,
 > - Input: 30x32 image, 8x32 laser range (Simulated)
 > - Output: Direction 
 
-> During testing, intensity output is recirculated to the input unit, which improves accuracy
+> During testing, intensity output is recirculated to the input unit, which improves accuracy.
 
 #### Off-Road Obstacle Avoidance through End-to-End Learning (Y LeCun, U Mueller, J Ben, E, Cosatto, B Flepp 2005) :star:
 
-> First use of a CNN for autonomous driving, introduces DAVE an off-road autonomous vehicle trained end-to-end to avoid obstacles 
+> First use of a CNN for autonomous driving, introduces DAVE an off-road autonomous vehicle trained end-to-end to avoid obstacles. 
 
 > - Architecture: 6-layer CNN 
 > - Input: left/right pair of 149x58 image 
-> - Output: Steering Angle 
+> - Output: Steering angle 
 
 #### Learning Long-Range Vision for Autonomous Off-Road Driving (R Hadsell, P Sermanet, J Ben, A Erkan, M Scoffier, K Kavukcuoglu, U Mueller, Y LeCun 2009)
 
@@ -73,8 +99,10 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Evolving large-scale neural networks for vision-based torcs (J Koutnik, G Cuccu, J Schmidhuber, FJ Gomez 2013)
 
+
+
  
-#### End to End Learning for Self-Driving Cars (Bojarski et al. 2016) :star:
+#### End to End Learning for Self-Driving Cars (M Bojarski, DD Testa, D Dworakowski, B Firner, B Flepp, P Goyal, LD Jackel, M Monfort, U Muller, J Zhang, X Zhang, J Zhao, K Zieba 2016) :star:
 
 > DAVE-2 trains a CNN end-to-end and has a 98% autonomy rate. The authors show that just by using steering as sparse signal and 100h driving, the CNN is able to learn useful features (ie outline of the road).
 > The authors evaluated driving on highway and roads under different weather circumstances, without lane switches and road changes.
@@ -85,9 +113,7 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > Represents steering command as *1/r*, where *r* is the turning radius in meters. 
 > Train the car with negative examples using shifted cameras.
-> Ranking after autonomous score: Each intervention is a penalty of 6 seconds
-
-#### Fast Incremental Learning for Off-Road Robot Navigation (A Provodin, L Torabi, B Flepp, Y LeCun, M Sergio, LD Jackel, U Muller, J Zbontar, 2016)
+> Ranking after autonomous score: Each intervention is a penalty of 6 seconds.
 
 ### 1.3 Direct Perception
 
@@ -98,8 +124,22 @@ A future system should include map building, visual odometry, spatial reasoning,
 > Describes well pro and cons of mediated and end-to-end learning and introduces another approach: direct perception. Uses a CNN to learn affordance values for a controller. Focuses on Highway Driving with multiple lanes.
 
 > - Architecture: AlexNet  
-> - Input: 280x210 image (Simulated)
+> - Input: 280x210 image (simulated)
 > - Output: 13 affordance indicators 
+
+
+### 1.4 Reinforcement Learning
+
+> Uses policy to estimate the best action in a given state
+
+#### Query-Efficient Imitation Learning for End-to-End Autonomous Driving (J Zhang, K Cho, 2016)
+
+> A human driver (reference policy) cannot cover all situations in data. This paper introduces imitation learning for AD, where a CNN learns a primary policy and together with the reference policy iterate to generate more data.
+> A safety policy, estimated by an additional FCN, predicts, if it is safe for a NN to drive.
+
+> Architecture: 6-layer CNN, 2 layer FCN 
+> Input: 160x72 image (simulated in TORCS), Conv5
+> Output: Steering angle, safe/unsafe
 
 
 ---------------------------------------
@@ -113,6 +153,8 @@ A future system should include map building, visual odometry, spatial reasoning,
 - Trajectory Planning for Bertha - A Local, Continous Method (Ziegler et al. 2014)
 - Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame (Werling et al. 2010)
 
+
+### Curriculum Learning 
 
 
 
@@ -188,8 +230,9 @@ Roag segmentation: 289 training, 290 testing
 - Playing for Data: Ground Truth from Computer Games (24966 densely labeled frames) [[Link](http://download.visinf.tu-darmstadt.de/data/from_games/index.html)]
 
 
-## 5 Simulation Environment
+## 5 Simulation Environment and Data Generation
 
+- Driverseat (Crowdsourcing)
 - GTA V 
 - TORCS
 
