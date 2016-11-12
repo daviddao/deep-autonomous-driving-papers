@@ -66,7 +66,7 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > Introduces the DeepTracking framework. A RNN can be trained to track objects (even when occluded) only using the raw sensory input. 
 
-> - Architecture: 3-layer GRU RNN
+> - Architecture: 3-layer CNN-GRU RNN
 > - Input: Raw occupancy map
 > - Output: Object map
 
@@ -76,11 +76,19 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > End-to-end approach for tracking objects in a moving car using the DeepTracking framework. It can track occluded objects using an RNN and account for the movement of the vehicle by adding spatial invariance.
 
-> - Architecture: 3-layer GRU RNN with STN 
+> - Architecture: 3-layer CNN-GRU RNN with STN 
 > - Input: Raw occupancy map
 > - Output: Object map 
 
 #### End-to-End Tracking and Semantic Segmentation Using Recurrent Neural Networks (P Ondruska, J Dequaire, DZ Wang, I Posner, 2016)
+
+> DeepTracking trained with unsupervised and (weak) supervised data to perform tracking and semantic segmentation. Network learns implicit tracking and world states which can be used for segmentation using transfer learning.
+
+> - Architecture: 3-layer CNN-GRU RNN with bias and dilated convolutions
+> - Input: Raw occupancy map, semantic segmentation map
+> - Output: Object map with semantic segmentation
+
+> The author extends the DeepTracking architecture using dilated convolutions to track objects of different scales, dynamic memory (LSTM or GRU) for information caching, static memory which helps to store place-specific information
 
 ### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
 
