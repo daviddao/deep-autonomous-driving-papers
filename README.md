@@ -60,14 +60,22 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Instance-Level Segmentation for Autonomous Driving with Deep Densely Connected MRFs (Z Zhang, S Fidler, R Urtasun, 2016)
 
+#### Deep Tracking: Seeing Beyond Seeing Using Recurrent Neural Networks (P Ondruska, I Posner, AAAI2016)
 
+> Introduces the DeepTracking framework. A RNN can be trained to track objects (even when occluded) only using the raw sensory input. 
+
+> - Architecture: 3-layer GRU RNN
+> - Input: Raw occupancy map
+> - Output: Object map
+
+> The authors use two tricks: Raw sensor input contains weak supervision and they predict future data points (instead present) to model movement.
 
 #### Deep Tracking on the Move: Learning to Track the World from a Moving Vehicle using Recurrent Neural Networks (J Dequaire, D Rao, P Ondruska, DZ Wang, I Posner, 2016) :star:
 
-> End-to-end approach for tracking objects in occupancy maps using the DeepTracking framework. It can track occluded objects using an RNN and account for the movement of the vehicle by adding spatial invariance.
+> End-to-end approach for tracking objects in a moving car using the DeepTracking framework. It can track occluded objects using an RNN and account for the movement of the vehicle by adding spatial invariance.
 
 > - Architecture: 3-layer GRU RNN with STN 
-> - Input: raw occupancy map
+> - Input: Raw occupancy map
 > - Output: Object map 
 
 ### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
@@ -141,11 +149,17 @@ A future system should include map building, visual odometry, spatial reasoning,
 > Input: 160x72 image (simulated in TORCS), Conv5
 > Output: Steering angle, safe/unsafe
 
+#### Watch This: Scalable Cost-Function Learning for Path Planning in Urban Environments (M Wulfmeier, DZ Wang, I Posner, IROS16 Best Student Paper)
+
 
 ---------------------------------------
 
 ## 2 Theory
 
+
+#### Maximum Entropy Deep Inverse Reinforcement Learning (M Wulfmeier, P Ondruska, I Posner, NIPS RL Workshop 2015) 
+
+> Maximum Entropy IRL models suboptimal samples (i.e driver trajectories) by assign each sample a probability proportional to its expected reward. The authors then use a CNN to predict costs for large state spaces and complex reward structures, achieving state-of-the-art.
 
 
 ### Traditional Trajectory Planning
