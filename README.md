@@ -242,6 +242,7 @@ Roag segmentation: 289 training, 290 testing
 - Udacity Open Dataset 223GB (70 min driving in Mountain View) [[Link](https://github.com/udacity/self-driving-car)]
 - DeepDrive.io Dataset 80GB (42h of driving simulated in GTAV) [[Link](https://deepdrive.io)]
 - Playing for Data: Ground Truth from Computer Games (24966 densely labeled frames) [[Link](http://download.visinf.tu-darmstadt.de/data/from_games/index.html)]
+- Oxford Robot Car Dataset: Huge dataset collected over 1 year with 1000km driving [[Link](http://robotcar-dataset.robots.ox.ac.uk/)]
 
 
 ## 5 Simulation Environment and Data Generation
@@ -268,5 +269,6 @@ Roag segmentation: 289 training, 290 testing
 
 ### More Links
 
+- Mobile Robotics Group Oxford 
 - Autonomous Vision Group [[Link](http://www,cvlibs.net/links.php)]
 - DeepDrive Berkeley
