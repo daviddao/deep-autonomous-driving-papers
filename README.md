@@ -60,7 +60,7 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Instance-Level Segmentation for Autonomous Driving with Deep Densely Connected MRFs (Z Zhang, S Fidler, R Urtasun, 2016)
 
-#### Deep Tracking: Seeing Beyond Seeing Using Recurrent Neural Networks (P Ondruska, I Posner, AAAI2016)
+#### Deep Tracking: Seeing Beyond Seeing Using Recurrent Neural Networks (P Ondruska, I Posner, AAAI2016) :star:
 
 [[code](https://github.com/pondruska/DeepTracking)]
 
@@ -89,6 +89,14 @@ A future system should include map building, visual odometry, spatial reasoning,
 > - Output: Object map with semantic segmentation
 
 > The author extends the DeepTracking architecture using dilated convolutions to track objects of different scales, dynamic memory (LSTM or GRU) for information caching, static memory which helps to store place-specific information
+
+#### Find Your Own Way: Weakly-Supervised Segmentation of Path Proposals for Urban Autonomy (D Barnes, W Maddern, I Posner, 2016)
+
+> Creates more path segmentation training data by combining future frames and sensor information. Uses a SegNet to train and predict paths using this additional data. Evaluates on KITTI and Oxford Car dataset.
+
+> - Architecture: SegNet
+> - Input: 640x256 image
+> - Output: Segmented image with path, unknown, obstacle
 
 ### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
 
@@ -119,7 +127,7 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Evolving large-scale neural networks for vision-based torcs (J Koutnik, G Cuccu, J Schmidhuber, FJ Gomez 2013)
 
-
+> Using evolutionary networks to train a car in TORCS.
 
  
 #### End to End Learning for Self-Driving Cars (M Bojarski, DD Testa, D Dworakowski, B Firner, B Flepp, P Goyal, LD Jackel, M Monfort, U Muller, J Zhang, X Zhang, J Zhao, K Zieba 2016) :star:
@@ -157,11 +165,17 @@ A future system should include map building, visual odometry, spatial reasoning,
 > A human driver (reference policy) cannot cover all situations in data. This paper introduces imitation learning for AD, where a CNN learns a primary policy and together with the reference policy iterate to generate more data.
 > A safety policy, estimated by an additional FCN, predicts, if it is safe for a NN to drive.
 
-> Architecture: 6-layer CNN, 2 layer FCN 
-> Input: 160x72 image (simulated in TORCS), Conv5
-> Output: Steering angle, safe/unsafe
+> - Architecture: 6-layer CNN, 2 layer FCN 
+> - Input: 160x72 image (simulated in TORCS), Conv5
+> - Output: Steering angle, safe/unsafe
 
 #### Watch This: Scalable Cost-Function Learning for Path Planning in Urban Environments (M Wulfmeier, DZ Wang, I Posner, IROS16 Best Student Paper)
+
+> Extends Maximum Entropy Inverse RL by using a multi-scale F-CNN architecture trained on 25000 trajectories. The trained network is robust towards sensor miscalibration and outperforms hand-designed features
+
+> - Architecture: 9-layer Fully-CNN with Max Pool and Multi-Scale Architecture 
+> - Input: 15m long trajectories on a 2D based 50x50m static map with 0.25m resolution (LIDAR)
+> - Output: Costmap
 
 
 ---------------------------------------
@@ -186,36 +200,25 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 ## Appendix A: Deep Learning Architectures
 
-
-CNN (Convolutional Neural Network)
-AlexNet
-VGG
-ResNet
-
-## Object Detection 
-
+- FCN
+- CNN (Convolutional Neural Network)
+- Fully-CNN
+- AlexNet
+- VGG
+- ResNet
+- SegNet
 - OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks (Sermanet et al. 2014)
 - Faster R-CNN 
-
-
-
-
-
-
 
 
 ### 3 Important Researchers
 
 - Sergey Levine
-- Peter Abeel
+- Peter Abbeel
 - Raquel Urtasun 
 - Yann LeCun
-
-
-### Stereo Matching
-
-- Stereo Matching by Training a CNN to Compare Image Patches (J.Zbontar and LeCun CVPR2015)
-
+- Ingmar Posner
+- Urs Muller
 
 
 ### Conferences & Workshops and Groups related to Deep Learning in AD
@@ -224,37 +227,56 @@ ResNet
 - Reliable Machine Learning in the Wild [[Link](https://sites.google.com/site/wildml2016nips/)]
 - BAIR/CPAR/BDD Internal Weekly Seminar
 - DeepDrive Berkeley [[Link](http://bdd.berkeley.edu/)]
-
-
-### Shared experience
-
-- Using Deep Learning combined with shared experiences to create AD 'kindergarten schools'
+- Mobile Robotics Group Oxford 
 
 
 ## 4 Autonomous Driving Datasets
 
-- comma.ai Dataset (7:15h of highway driving) [[Link](https://github.com/commaai/research)]
+#### comma.ai Dataset 
 
-- KITTI Vision Benchmark Suite [[Link](http://www.cvlibs.net/datasets/kitti/)]
+> 7:15h of highway driving
+> [[Link](https://github.com/commaai/research)]
 
-Stereo: 200 training, 200 testing
-Optical Flow: 200 training, 200 testing
-Scene Flow: 200 training, 200 testing
-Visual Odometry: 22 videos of 40km
-Object Detection: 7500 training, 7500 testing
-Object Tracking: 21 training, 29 testing
-Roag segmentation: 289 training, 290 testing
+#### KITTI Vision Benchmark Suite 
 
-- Cityscapes Dataset 
+> [[Link](http://www.cvlibs.net/datasets/kitti/)]
 
-5000 annotated images with fine annotations
-20000 annotated images with coarse annotations 
+- Stereo: 200 training, 200 testing
+- Optical Flow: 200 training, 200 testing
+- Scene Flow: 200 training, 200 testing
+- Visual Odometry: 22 videos of 40km
+- Object Detection: 7500 training, 7500 testing
+- Object Tracking: 21 training, 29 testing
+- Roag segmentation: 289 training, 290 testing
 
-- DARPA Urban Grand Challenge Dataset [[Link](http://grandchallenge.mit.edu)]
-- Udacity Open Dataset 223GB (70 min driving in Mountain View) [[Link](https://github.com/udacity/self-driving-car)]
-- DeepDrive.io Dataset 80GB (42h of driving simulated in GTAV) [[Link](https://deepdrive.io)]
-- Playing for Data: Ground Truth from Computer Games (24966 densely labeled frames) [[Link](http://download.visinf.tu-darmstadt.de/data/from_games/index.html)]
-- Oxford Robot Car Dataset: Huge dataset collected over 1 year with 1000km driving [[Link](http://robotcar-dataset.robots.ox.ac.uk/)]
+#### Cityscapes Dataset 
+
+- 5000 annotated images with fine annotations
+- 20000 annotated images with coarse annotations 
+
+#### DARPA Urban Grand Challenge Dataset 
+
+> [[Link](http://grandchallenge.mit.edu)]
+
+#### Udacity Open Dataset 
+
+> 223GB (70 min driving in Mountain View) 
+> [[Link](https://github.com/udacity/self-driving-car)]
+
+#### DeepDrive.io Dataset 
+
+> 80GB (42h of driving simulated in GTAV) 
+> [[Link](https://deepdrive.io)]
+
+#### Playing for Data: Ground Truth from Computer Games 
+
+> (24966 densely labeled frames) 
+> [[Link](http://download.visinf.tu-darmstadt.de/data/from_games/index.html)]
+
+#### Oxford Robot Car Dataset
+
+> Huge dataset collected over 1 year with 1000km driving 
+> [[Link](http://robotcar-dataset.robots.ox.ac.uk/)]
 
 
 ## 5 Simulation Environment and Data Generation
@@ -281,6 +303,4 @@ Roag segmentation: 289 training, 290 testing
 
 ### More Links
 
-- Mobile Robotics Group Oxford 
 - Autonomous Vision Group [[Link](http://www,cvlibs.net/links.php)]
-- DeepDrive Berkeley
