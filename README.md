@@ -62,6 +62,8 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Deep Tracking: Seeing Beyond Seeing Using Recurrent Neural Networks (P Ondruska, I Posner, AAAI2016)
 
+[[code](https://github.com/pondruska/DeepTracking)]
+
 > Introduces the DeepTracking framework. A RNN can be trained to track objects (even when occluded) only using the raw sensory input. 
 
 > - Architecture: 3-layer GRU RNN
@@ -77,6 +79,8 @@ A future system should include map building, visual odometry, spatial reasoning,
 > - Architecture: 3-layer GRU RNN with STN 
 > - Input: Raw occupancy map
 > - Output: Object map 
+
+#### End-to-End Tracking and Semantic Segmentation Using Recurrent Neural Networks (P Ondruska, J Dequaire, DZ Wang, I Posner, 2016)
 
 ### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
 
