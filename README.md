@@ -186,7 +186,7 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Watch This: Scalable Cost-Function Learning for Path Planning in Urban Environments (M Wulfmeier, DZ Wang, I Posner, IROS16 Best Student Paper)
 
-> Extends Maximum Entropy Inverse RL by using a multi-scale F-CNN architecture trained on 25000 trajectories. The trained network is robust towards sensor miscalibration and outperforms hand-designed features. Evaluated on real-world data.
+> Extends Maximum Entropy Inverse RL by using a multi-scale F-CNN architecture trained on 25000 trajectories. The trained network is robust towards sensor miscalibration and outperforms hand-designed features. Evaluated on real-world data. 20% FNR for 0% FPR trajectory prediction (compared to hand-tuned state-of-the art with 50% FPR)
 
 > - Architecture: 9-layer Fully-CNN with Max Pool and Multi-Scale Architecture 
 > - Input: 15m long trajectories on a 2D based 50x50m static map with 0.25m resolution (LIDAR)
