@@ -58,7 +58,7 @@ A future system should include map building, visual odometry, spatial reasoning,
 > - Input: 59x59 image patches around pixels
 > - Output: Each pixel as "drivable" or "obstacle" 
 
-Just visual but no empirical results.
+> Just visual but no empirical results.
 
 #### Instance-Level Segmentation for Autonomous Driving with Deep Densely Connected MRFs (Z Zhang, S Fidler, R Urtasun, 2016)
 
@@ -100,7 +100,7 @@ Just visual but no empirical results.
 > - Input: 640x256 image
 > - Output: Segmented image with path, unknown, obstacle
 
-Around 85-93% accuracy on Oxford, improving previous SegNet results on KITTI by up to 20%.
+> Around 85-93% accuracy on Oxford, improving previous SegNet results on KITTI by up to 20%.
 
 ### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
 
