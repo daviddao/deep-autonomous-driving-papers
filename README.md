@@ -158,7 +158,9 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 > - Architecture: AlexNet  
 > - Input: 280x210 image (simulated)
-> - Output: 13 affordance indicators 
+> - Output: 13 affordance indicators
+
+> Evaluated on KITTI and TORCS. Speed does notexceed 72km/h, reliable car perception within 30m.
 
 
 ### 1.4 Reinforcement Learning
