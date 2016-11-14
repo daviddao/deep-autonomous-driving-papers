@@ -127,8 +127,13 @@ A future system should include map building, visual odometry, spatial reasoning,
 
 #### Evolving large-scale neural networks for vision-based torcs (J Koutnik, G Cuccu, J Schmidhuber, FJ Gomez 2013)
 
-> Using evolutionary networks to train a car in TORCS.
+> The authors use neuroevolution with a compressed weight matrix representation instead of backpropagation to learn a set of weights for TORCS (1 million).
 
+> - Architecture: Neuroevolved RNN
+> - Input: Image, 25sec driving frame
+> - Output: Driving behaviour, new set of genome
+
+> Defined a custom fitness function, ran the experiments with 200 generations.
  
 #### End to End Learning for Self-Driving Cars (M Bojarski, DD Testa, D Dworakowski, B Firner, B Flepp, P Goyal, LD Jackel, M Monfort, U Muller, J Zhang, X Zhang, J Zhao, K Zieba 2016) :star:
 
