@@ -235,12 +235,14 @@
 > - Object Tracking: 21 training, 29 testing
 > - Roag segmentation: 289 training, 290 testing
 
-**[3]** **Cityscapes Dataset** 
+**[3]** **Cityscapes Dataset** [[Link](https://www.cityscapes-dataset.com/)]
 
 > 5000 annotated images with fine annotations
 > 20000 annotated images with coarse annotations 
 
 **[4]** **DARPA Urban Grand Challenge Dataset** [[Link](http://grandchallenge.mit.edu)]
+
+> 200 GB (Log files of sensors and camera logs)
 
 **[5]** **Udacity Open Dataset** [[Link](https://github.com/udacity/self-driving-car)]
 
