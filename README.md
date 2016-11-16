@@ -86,7 +86,7 @@
 
 **[8]** L Zhang, L Lin, X Liang, K He. **Is Faster R-CNN Doing Well for Pedestrian Detection?** (2016) [[pdf](https://arxiv.org/pdf/1607.07032v2.pdf)] 
 
-> Faster R-CNN is state-of-the-art model. But wild datasets such as pedestrian detection have additional obstacles for deep models to overcome (e.g low resolution)
+> Faster R-CNN is state-of-the-art model. But wild datasets such as pedestrian detection have additional obstacles for deep models to overcome (e.g low resolution). Proposes a hybrid solution with deep features for boosted trees.
 
 ---------------------------------------
 
@@ -263,6 +263,18 @@
 **[8]** **Oxford Robot Car Dataset** [[Link](http://robotcar-dataset.robots.ox.ac.uk/)]
 
 > Huge dataset collected over 1 year with 1000km driving 
+
+**[9]** **ETHZ Pedestrian Dataset** [[Link](http://www.vision.ee.ethz.ch/datasets/)]
+
+> The set was recorded in Zurich, using a pair of cameras mounted on a mobile platform. It contains 12'298 annotated pedestrians in roughly 2'000 frames. 
+
+**[10]** **INRIA Pedestrian Dataset** [[Link](http://pascal.inrialpes.fr/data/human/)]
+
+> 1GB pedestrian dataset
+
+**[11]** **Caltech Pedestrian Dataset** [[Link](https://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/)]
+
+> 10 hours of 640x480 30Hz video taken from a vehicle driving through regular traffic in an urban environment. About 250,000 frames (in 137 approximately minute long segments) with a total of 350,000 bounding boxes and 2300 unique pedestrians were annotated.
 
 ## 5 Simulation Environment and Data Generation
 
