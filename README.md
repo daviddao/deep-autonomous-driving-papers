@@ -84,6 +84,10 @@
 
 > Around 85-93% accuracy on Oxford, improving previous SegNet results on KITTI by up to 20%.
 
+**[8]** L Zhang, L Lin, X Liang, K He. **Is Faster R-CNN Doing Well for Pedestrian Detection?** (2016) [[pdf](https://arxiv.org/pdf/1607.07032v2.pdf)] 
+
+> Faster R-CNN is state-of-the-art model. But wild datasets such as pedestrian detection have additional obstacles for deep models to overcome (e.g low resolution)
+
 ---------------------------------------
 
 ### 1.2 Behaviour Reflex (Supervised End-to-End Learning)
