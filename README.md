@@ -142,6 +142,8 @@
 > Train the car with negative examples using shifted cameras.
 > Ranking after autonomous score: Each intervention is a penalty of 6 seconds.
 
+**[6]** A. Giusti et al. **"A Machine Learning Approach to the Visual Perception of Forest Trails for Mobile Robots"**. IEEE Robotics and Automation Letters (2016) and ICRA 2016 (accepted) [[pdf](http://people.idsia.ch/~giusti/forest/web/)]
+
 ---------------------------------------
 
 ### 1.3 Direct Perception
@@ -192,6 +194,10 @@
 **[1]** M Wulfmeier, P Ondruska, I Posner. **Maximum Entropy Deep Inverse Reinforcement Learning** (NIPS RL Workshop 2015) 
 
 > Maximum Entropy IRL models suboptimal samples (i.e driver trajectories) by assign each sample a probability proportional to its expected reward. The authors then use a CNN to predict costs for large state spaces and complex reward structures, achieving state-of-the-art.
+
+**[2]** A Tamar, Y Wu, G Thomas, S Levine, P Abbeel **Value Iteration Networks** (Best Paper Award NIPS 2016)
+
+> Embedded Planning module inside a NN
 
 ## Appendix A: Deep Learning Architectures
 
