@@ -195,7 +195,7 @@
 
 > Maximum Entropy IRL models suboptimal samples (i.e driver trajectories) by assign each sample a probability proportional to its expected reward. The authors then use a CNN to predict costs for large state spaces and complex reward structures, achieving state-of-the-art.
 
-**[2]** A Tamar, Y Wu, G Thomas, S Levine, P Abbeel **Value Iteration Networks** (Best Paper Award NIPS 2016)
+**[2]** A Tamar, Y Wu, G Thomas, S Levine, P Abbeel **Value Iteration Networks** (Best Paper Award NIPS 2016) [[code](https://github.com/avivt/VIN)]
 
 > Embedded Planning module inside a NN
 
