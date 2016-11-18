@@ -26,7 +26,7 @@
 
 ### 1.1 Mediated Perception 
 
-**[1]** B Huval, T Wang, S Tandon, J Kiske, W Song, J Pazhayampallil, M Andriluka, P Rajpurkar, T Migimatsu, R Cheng-Yue, F Mujica, A Coates, AY Ng.  **An Empirical Evaluation of Deep Learning on Highway Driving** (2015)
+**[1]** B Huval, T Wang, S Tandon, J Kiske, W Song, J Pazhayampallil, M Andriluka, P Rajpurkar, T Migimatsu, R Cheng-Yue, F Mujica, A Coates, AY Ng.  **[An Empirical Evaluation of Deep Learning on Highway Driving](https://arxiv.org/pdf/1504.01716v3.pdf)** (2015)
 
 > Uses Overfeat for real-time vehicle and lane detection. Due to detection ambiguity, the authors modified Overfeat to first predict a object mask and then used a bounding box regression for the final object detection.
 
@@ -34,7 +34,7 @@
 > - Input: 640x480 input 
 > - Output: Object mask
 
-**[2]** A Provodin, L Torabi, B Flepp, Y LeCun, M Sergio, LD Jackel, U Muller, J Zbontar. **Fast Incremental Learning for Off-Road Robot Navigation** (2016)
+**[2]** A Provodin, L Torabi, B Flepp, Y LeCun, M Sergio, LD Jackel, U Muller, J Zbontar. **[Fast Incremental Learning for Off-Road Robot Navigation](https://arxiv.org/pdf/1606.08057v1.pdf)** (2016)
 
 > Uses transfer learning to cope with the problem of missing data in AD. Shows that a pretrained CNN on ImageNet can extract good features for AD.
 
