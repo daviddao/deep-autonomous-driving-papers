@@ -224,6 +224,7 @@
 ### Conferences & Workshops and Groups related to Deep Learning in AD
 
 - Deep Learning for Action and Interaction NIPS 2016
+- Machine Learning for Intelligent Transportation Systems NIPS 2016 [[Link](https://sites.google.com/site/nips2016intelligenttrans/)]
 - Reliable Machine Learning in the Wild [[Link](https://sites.google.com/site/wildml2016nips/)]
 - BAIR/CPAR/BDD Internal Weekly Seminar
 - DeepDrive Berkeley [[Link](http://bdd.berkeley.edu/)]
