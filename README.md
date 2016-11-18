@@ -64,7 +64,7 @@
 > - Input: Raw occupancy map
 > - Output: Object map 
 
-**[6]** P Ondruska, J Dequaire, DZ Wang, I Posner. **End-to-End Tracking and Semantic Segmentation Using Recurrent Neural Networks** (2016)
+**[6]** P Ondruska, J Dequaire, DZ Wang, I Posner. **[End-to-End Tracking and Semantic Segmentation Using Recurrent Neural Networks](https://arxiv.org/pdf/1604.05091v2.pdf)** (2016)
 
 > DeepTracking trained with unsupervised and (weak) supervised data to perform tracking and semantic segmentation. Network learns implicit tracking and world states which can be used for segmentation using transfer learning. Improved F1 score by 0.05 from original paper.
 
