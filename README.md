@@ -74,7 +74,7 @@
 
 > The author extends the DeepTracking architecture using dilated convolutions to track objects of different scales, dynamic memory (LSTM or GRU) for information caching, static memory which helps to store place-specific information. 
 
-**[7]** D Barnes, W Maddern, I Posner **Find Your Own Way: Weakly-Supervised Segmentation of Path Proposals for Urban Autonomy** (2016)
+**[7]** D Barnes, W Maddern, I Posner **[Find Your Own Way: Weakly-Supervised Segmentation of Path Proposals for Urban Autonomy](https://arxiv.org/pdf/1610.01238v1.pdf)** (2016)
 
 > Creates more path segmentation training data by combining future frames and sensor information. Uses a SegNet to train and predict paths using this additional data. Evaluates on KITTI and Oxford Car dataset.
 
