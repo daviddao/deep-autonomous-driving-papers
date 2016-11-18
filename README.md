@@ -56,7 +56,7 @@
 
 > The authors use two tricks: Raw sensor input contains weak supervision and they predict future data points (instead present) to model movement.
 
-**[5]** J Dequaire, D Rao, P Ondruska, DZ Wang, I Posner. **Deep Tracking on the Move: Learning to Track the World from a Moving Vehicle using Recurrent Neural Networks** (2016) :star:
+**[5]** J Dequaire, D Rao, P Ondruska, DZ Wang, I Posner. **[Deep Tracking on the Move: Learning to Track the World from a Moving Vehicle using Recurrent Neural Networks](https://arxiv.org/pdf/1609.09365v1.pdf)** (2016) :star:
 
 > End-to-end approach for tracking objects in a moving car using the DeepTracking framework. It can track occluded objects using an RNN and account for the movement of the vehicle by adding spatial invariance. 0.7 F1 score for 1 sec prediction time. STM contributes up to 0.07 F1 score.
 
@@ -84,7 +84,7 @@
 
 > Around 85-93% accuracy on Oxford, improving previous SegNet results on KITTI by up to 20%.
 
-**[8]** L Zhang, L Lin, X Liang, K He. **Is Faster R-CNN Doing Well for Pedestrian Detection?** (2016) [[pdf](https://arxiv.org/pdf/1607.07032v2.pdf)] 
+**[8]** L Zhang, L Lin, X Liang, K He. **[Is Faster R-CNN Doing Well for Pedestrian Detection?](https://arxiv.org/pdf/1607.07032v2.pdf)** (2016) 
 
 > Faster R-CNN is state-of-the-art model. But wild datasets such as pedestrian detection have additional obstacles for deep models to overcome (e.g low resolution). Proposes a hybrid solution with deep features for boosted trees.
 
@@ -142,7 +142,7 @@
 > Train the car with negative examples using shifted cameras.
 > Ranking after autonomous score: Each intervention is a penalty of 6 seconds.
 
-**[6]** A. Giusti et al. **"A Machine Learning Approach to the Visual Perception of Forest Trails for Mobile Robots"**. IEEE Robotics and Automation Letters (2016) and ICRA 2016 (accepted) [[pdf](http://people.idsia.ch/~giusti/forest/web/)]
+**[6]** A. Giusti et al. **[A Machine Learning Approach to the Visual Perception of Forest Trails for Mobile Robots](http://people.idsia.ch/~giusti/forest/web/)**. IEEE Robotics and Automation Letters (2016) and ICRA 2016 (accepted) 
 
 ---------------------------------------
 
